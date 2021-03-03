@@ -78,7 +78,7 @@ func (e *Event) ProcessEvent() int {
 		}
 		fmt.Printf("\t%s\n", e.Description)
 		if e.Evt != "" {
-			hp = hp + evts[e.Evt].ProcessEvent()
+			hp = hp + Events[e.Evt].ProcessEvent()
 		}
 
 		return hp
@@ -89,12 +89,12 @@ func (e *Event) ProcessEvent() int {
 
 func (g *Game) ProcessEvents(events []string) {
 	for _, evtName := range events {
-		g.Health += evts[evtName].ProcessEvent()
+		g.Health += Events[evtName].ProcessEvent()
 	}
 }
 
 func (g *Game) Play() {
-	CurrentLocation := locationMap["Bridge"]
+	CurrentLocation := LocationMap["Bridge"]
 	fmt.Println(g.Welcome)
 	for {
 		fmt.Println(CurrentLocation.Description)
@@ -116,6 +116,6 @@ func (g *Game) Play() {
 			fmt.Scan(&i)
 		}
 		newLoc := i - 1
-		CurrentLocation = locationMap[CurrentLocation.Transitions[newLoc]]
+		CurrentLocation = LocationMap[CurrentLocation.Transitions[newLoc]]
 	}
 }
