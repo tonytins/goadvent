@@ -4,4 +4,4 @@ Text Adventures is something I've always wanted to make. This is my attempt at c
 
 ## License
 
-I license this project under the MPL-2.0 license - see [LICENSE](LICENSE) for details. 
+This project is dual-licensed under the [BSD-3-Clause](LICENSE) or the [UNLICENSE](UNLICENSE).
